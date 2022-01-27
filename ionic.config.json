@@ -1,0 +1,7 @@
+{
+  "name": "spotify_Clone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
