@@ -1,67 +1,102 @@
 <template>
-  <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-page>
+      <div class="d-flex" style="height: 88vh;">
+           <div class="sideNav">
+               <TabsPage />
+           </div>
+              <div class="main">
+                <div class="header">
+                   <span style="color:white;">HomePage</span>
+                </div>
+           </div>
       </div>
-    </ion-content>
-  </ion-page>
+    </ion-page>
+       <!-- <ion-page>
+           <ion-tabs>
+            
+                <ion-router-outlet />
+               <div class="sideNav">
+                   <ion-tab-bar>
+                       <ion-tab-button  href="/search" tab="search">
+                            <div class="search">
+                                <ion-icon :icon="search"  color ="light"></ion-icon>
+                                <span>Search</span>
+                            </div>
+                       </ion-tab-button>
+                   </ion-tab-bar>
+               </div>
+               
+           </ion-tabs>
+       </ion-page> -->
+            <!-- <nav class="sideNav">
+                <searchPage />
+            </nav> -->
+   
 </template>
-
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+// import searchPage from "./searchPage.vue";
+import { IonPage } from '@ionic/vue';
+import { search } from "ionicons/icons";
+import TabsPage from "./TabsPage.vue";
+// import { IonPage } from '@ionic/vue';
 
+// import { search } from "ionicons/icons";
 export default defineComponent({
-  components: {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar
-  }
-});
+    name:'HomePage',
+    components:{
+        // searchPage,
+        IonPage,
+        TabsPage,
+        // IonTabs,
+        // IonIcon,
+        // IonTabButton,
+        // IonRouterOutlet,
+        // IonTabBar,
+
+    },
+    setup(){
+        return{
+            search,
+        };
+    }
+})
 </script>
-
 <style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.ion-page{
+    background-color: #121212;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.d-flex{
+    display: flex;
+    
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
+/* we need to set a width and height first in the parent div and add a padding on the 
+child so that we dont need to 
+add a text just to see the length of div
+*/
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
 }
-
-#container a {
-  text-decoration: none;
+.header{
+    width: 100%;
+    /* background-color: blue; */
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
 }
+/* .ion-page{
+    width: 100%;
+    height: 100%;
+}
+  .sideNav{
+    background-color: #000000;
+    width: 14rem;
+    height: 100%;
+  }
+  span{
+      color: wheat;
+  } */
 </style>
