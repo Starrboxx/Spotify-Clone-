@@ -3,14 +3,13 @@
         
             <ion-router-outlet></ion-router-outlet>
             <div class="ion-align-items-start sideNav">
-                <!-- padding:25px 30px 30px 20px; -->
                     <div style="padding-top: 25px;" >
                         <div  style="padding: 0 24px; margin-bottom:18px;">
                             <img src="../image/Spotify_Logo_RGB_White.png" alt="">
                         </div>
                          <ion-button href="/home" expand="block" tab="home" fill="clear"  class="HomeNav ion-text-capitalize">
                              <div class="Menu1">
-                                <ion-icon :icon="home"  color ="light" slot="start"></ion-icon>
+                                <ion-icon :icon="home"  slot="start"></ion-icon>
                                <ion-label style="margin-right:6rem;">Home</ion-label>
                             </div>
                         </ion-button>
@@ -18,13 +17,13 @@
                         
                         <ion-button  href="/search" tab="search" fill="clear"  class="SearchNav ion-text-capitalize">
                             <div class="Menu2">
-                                <ion-icon :icon="search"  color ="light"></ion-icon>
+                                <ion-icon :icon="search"></ion-icon>
                                 <ion-label style="margin-right:6rem;">Search</ion-label>
                             </div>
                         </ion-button>
-                        <ion-button  href="/collections/playlist" tab="library" fill="clear"  class="SearchNav ion-text-capitalize">
-                            <div class="Menu2">
-                                <ion-icon :icon="library"  color ="light"></ion-icon>
+                        <ion-button  href="/collections/playlist" tab="library" fill="clear"  class="PlaylistNav ion-text-capitalize">
+                            <div class="Menu3">
+                                <ion-icon :icon="library"></ion-icon>
                                 <ion-label style="margin-right:3.75rem;">Your Library</ion-label>
                             </div>
                         </ion-button>
@@ -81,14 +80,27 @@ export default defineComponent({
       text-align: left;
       width: 100%;
   }
-    .HomeNav,.SearchNav{
+    .HomeNav,.SearchNav,.PlaylistNav{
         width: 100%;
         font-weight: 700;
         letter-spacing: -1px;
-        color: white;
+        color: gray;
+        transition: color .5s ease;
+    }
+    .SearchNav:hover{
+        color:white;
+    }
+    .PlaylistNav:hover{
+        color:white;
     }
     .Menu1 ion-icon,
-    .Menu2 ion-icon{
+    .Menu1 ion-label{
+        color: white;
+    }
+   
+    .Menu1 ion-icon,
+    .Menu2 ion-icon,
+    .Menu3 ion-icon{
         margin-right: 15px;
         font-size: 20px;
     }
