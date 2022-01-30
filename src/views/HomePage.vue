@@ -27,8 +27,6 @@
                                            <h2 v-if="currentTime >= 0 && currentTime < 12">Good Morning</h2>
                                            <h2 v-else-if="currentTime >= 12 && currentTime < 17">Good Afternnon</h2>
                                            <h2 v-else>Good evening</h2>
-                                           <!-- <div v-if="true && false">I am not visible!</div>
-                                           <div v-if="1 == 2 || (1 + 2 == 3 && 4 == 4)">I am visible!</div> -->
                                        </div>
                                        <PlayList />
                                    </section>
@@ -192,7 +190,7 @@ add a text just to see the length of div
     font-weight: 700;
     color: white;
     line-height: 36px;
-    letter-spacing: -.05em;
+    letter-spacing: -.04em;
 }
 
 </style>

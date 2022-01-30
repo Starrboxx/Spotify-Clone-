@@ -17,7 +17,10 @@ export default defineComponent({
 });
 </script>
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@800&display=swap');
+body{
+ font-family: 'Gothic A1', sans-serif;
+}
 /* *{
   padding: 0;
   margin: 0;
