@@ -17,7 +17,7 @@
 
                     </div>
                    <div class="main-Container">
-                        <div class="backgroundColor" id="backgroundColor" style="background-color: rgba(248, 56, 120, 1);"></div>
+                        <div class="backgroundColor" id="backgroundColor" style="background-color: #000000;"></div>
                        <section>
                            <div class="Container">
                                <div class="subContainer">
@@ -30,9 +30,15 @@
                                        </div>
                                        <PlayList />
                                    </section>
+                                    <section>
+                                        <div class="EpisodesFor">
+                                            <h1>Episodes For you</h1>
+                                        </div>
+                                    </section>
                                </div>
                            </div>
                        </section>
+                      
                        <!-- <img src="../src/image/FOL-Playlist-logo.jpg" alt=""> -->
                    </div>
                </div>
@@ -81,7 +87,8 @@ export default defineComponent({
        Time(){
            const h = new Date().getHours();
            this.currentTime = h;
-       }
+       },
+       
     }, 
     created() {
             setInterval(this.Time, 1000);

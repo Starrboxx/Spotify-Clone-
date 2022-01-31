@@ -9,10 +9,15 @@
                          <div class="d-flex headerIcons">
                              <ion-icon :icon="chevronBackCircle"  color ="light"></ion-icon>
                              <ion-icon :icon="chevronForwardCircle"  color ="light"></ion-icon>
+                            <ion-button color="medium">Playlists</ion-button>
+                            <ion-button color="medium">Podcasts</ion-button>
+                            <ion-button color="medium">Artists</ion-button>
+                            <ion-button color="medium">Albums</ion-button>  
+                            
                          </div>
+                           
+                              <ion-button fill="solid" shape="round" class="ion-text-capitalize Userbtn">Migo Campos</ion-button>
                        
-                             <ion-button fill="outline" color="light" shape="round">Upgrade</ion-button>
-                        
                     </div>
                </div>
       </div>
@@ -21,11 +26,17 @@
 <script>
 import { defineComponent } from 'vue';
 import TabsPage from "./TabsPage.vue";
+// import PlaylistLibraryPage from '../components/PlaylistLibraryPage.vue';
+import {IonPage, IonIcon, IonButton} from '@ionic/vue';
 import {chevronBackCircle,chevronForwardCircle} from 'ionicons/icons';
 export default defineComponent({
     name:'YourLibraryPage',
     components:{
         TabsPage,
+        IonPage,
+        IonIcon,
+        IonButton,
+        // PlaylistLibraryPage
     },
     setup(){
         return{
@@ -41,7 +52,7 @@ export default defineComponent({
 }
 .d-flex{
     display: flex;
-    margin-left:10px;
+    /* margin-left:10px; */
 }
 .main{
     width: 100%;
@@ -56,7 +67,8 @@ export default defineComponent({
     top: 0;
     padding: 0.5rem;
     display: flex;
-
+     height: 64px;
+    z-index: 2;
 }
 .header .headerIcons ion-icon{
     font-size: 35px;
@@ -72,6 +84,11 @@ export default defineComponent({
     /* display: flex; */
     align-items: flex-end;
 
+}
+.header .Userbtn{
+    --background:#000000;
+    margin-left: auto;
+    margin-right: 30px;
 }
 
 </style>

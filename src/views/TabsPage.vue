@@ -57,10 +57,6 @@ export default defineComponent({
 })
 </script>
 <style>
-    .ion-page{
-        /* display: grid; */
-        /* width: 14rem; */
-    }
   .sideNav{
     background-color: #000000;
     width: 14rem;

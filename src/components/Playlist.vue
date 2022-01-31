@@ -5,7 +5,7 @@
                 <!-- to move the content to far left of the card
                 https://stackoverflow.com/questions/49569679/how-to-remove-the-padding-around-ion-item
                  -->
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistOne" @mouseenter="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                           <div class="image" style="">
@@ -16,12 +16,12 @@
                        <div class="PlayList-title">
                            <ion-label>Kdrama Ost</ion-label>
                        </div>
-                         <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
+                         <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                     </ion-item>
                 </ion-card>
             </ion-col>
             <ion-col size-xl="4" size-md="6" size-sm="12" size-xs="12" class="ion-no-padding ion-padding-end">
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistTwo"  @mouseenter="HoverPlaylistTwo()" @mouseleave="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                            <div class="image">
@@ -31,12 +31,13 @@
                        <div class="PlayList-title">
                            <ion-label>Kpop</ion-label>
                        </div>
+                       <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                          <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
                     </ion-item>
                 </ion-card>
             </ion-col>
             <ion-col size-xl="4" size-md="6" size-sm="12" size-xs="12" class="ion-no-padding ion-padding-end">
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistThree"  @mouseenter="HoverPlaylistThree()" @mouseleave="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                           <div class="image">
@@ -46,12 +47,13 @@
                        <div class="PlayList-title">
                            <ion-label>Random Songs</ion-label>
                        </div>
+                       <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                          <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
                     </ion-item>
                 </ion-card>
             </ion-col>
             <ion-col size-xl="4" size-md="6" size-sm="12" size-xs="12" class="ion-no-padding ion-padding-end">
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistFour" @mouseenter="HoverPlaylistFour()" @mouseleave="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                            <div class="image">
@@ -61,12 +63,12 @@
                        <div class="PlayList-title">
                            <ion-label>Loona mix</ion-label>
                        </div>
-                       
+                       <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                     </ion-item>
                 </ion-card>
             </ion-col>
             <ion-col size-xl="4" size-md="6" size-sm="12" size-xs="12"  class="ion-no-padding ion-padding-end">
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistFive"  @mouseenter="HoverPlaylistFive()" @mouseleave="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                            <div class="image">
@@ -76,11 +78,12 @@
                        <div class="PlayList-title">
                            <ion-label class="ion-text-wrap">Our Beloved Summer OST</ion-label>
                        </div>
+                       <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                     </ion-item>  
                 </ion-card>
             </ion-col>
             <ion-col size-xl="4" size-md="6" size-sm="12" size-xs="12" class="ion-no-padding ion-padding-end">
-                 <ion-card  class="">
+                 <ion-card  id="PlaylistSix"  @mouseenter="HoverPlaylistSix()" @mouseleave="HoverPlaylistDefault()">
                     <ion-item class="ion-no-padding">
                        <div class="outerdivImage">
                            <div class="image">
@@ -90,7 +93,7 @@
                        <div class="PlayList-title">
                            <ion-label>Twice mix</ion-label>
                        </div>
-                        
+                        <ion-icon :icon="playCircle" color="success" slot="end"></ion-icon>
                     </ion-item>
                 </ion-card>
             </ion-col>
@@ -100,6 +103,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { IonGrid,IonRow,IonCol,IonCard,IonItem,IonLabel } from '@ionic/vue';
+import {playCircle} from 'ionicons/icons';
 export default defineComponent({
    name:'PlayList',
    components:{
@@ -110,6 +114,43 @@ export default defineComponent({
        IonItem,
        IonLabel,
        
+   },
+   setup(){
+       return{
+           playCircle,
+       }
+   },
+   methods:{
+       HoverPlaylistDefault(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgba(248, 56, 120, 1)";
+           console.log(bgColor);
+       },
+       HoverPlaylistTwo(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgba(96, 42, 248, 1)";
+           console.log(bgColor);
+       },
+       HoverPlaylistThree(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgba(144, 24, 24, 1)";
+           console.log(bgColor);
+       },
+       HoverPlaylistFour(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgba(64, 16, 24, 1)";
+           console.log(bgColor);
+       },
+       HoverPlaylistFive(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgb(147, 179, 111)";
+           console.log(bgColor);
+       },
+       HoverPlaylistSix(){
+           const bgColor = document.getElementById("backgroundColor");
+           bgColor.style.backgroundColor = "rgba(160, 184, 208, 1)";
+           console.log(bgColor);
+       },
    }
 })
 </script>
@@ -123,10 +164,9 @@ ion-row{
 }
 ion-item{
     --background: rgba(255, 255, 255, .05);
+  --transition: --background .3s ease;
 }
-ion-item .item-native{
-    /* padding-inline-start: 0; */
-}
+
 ion-item .outerdivImage{
     min-width: 80px;
     min-height: 80px;
@@ -152,6 +192,13 @@ ion-item .outerdivImage{
     font-weight: 700;
     font-size: 1em;
     
+}
+ion-item:hover{
+ --background: rgba(255, 255, 255, .10);
+  
+}
+ion-item ion-icon{
+    font-size: 50px;
 }
 </style>
 
